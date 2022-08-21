@@ -8,6 +8,7 @@ h1 {
     font-weight: 700;
     color: white;
     font-size: 50px;
+    margin: 0px;
 }
 
 h2 {
@@ -16,6 +17,7 @@ h2 {
     color: white;
     font-size: 24px;
     font-size: 36px;
+    margin: 0px;
 }
 
 h3 {
@@ -69,22 +71,10 @@ header nav li a:active {
     color: #40E0D0
 }
 
-#pro-pic {
-    height: 19rem;
-    width: 19rem;
-    object-fit: cover;
-    border-radius: 50%;
-    object-position: 90% 0;
-    position: absolute;
-    right: 20px;
-    bottom: 42%;
-}
-
 /* About Me Styles */
 #about-me {
     display: grid;
     grid-template-rows: auto auto;
-    width: 45rem;
     margin-left: 3rem;
 }
 
@@ -93,9 +83,27 @@ header nav li a:active {
     margin-bottom: 1rem;
 }
 
+#about-me-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #about-me p {
     padding: 20px;
     border: solid #FFA500 1px;
+    height: fit-content;
+    max-width: 45rem;
+}
+
+#pro-pic {
+    background-image: url('../images/pro_pic.JPG');
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
 }
 
 /* Projects Styles */
@@ -142,5 +150,28 @@ footer {
     margin: 0px;
     padding: 20px;
     text-align: right;
+}
+
+/* Contact Styles */
+#contact {
+    border: solid #FFA500 1px;
+    width: fit-content;
+    margin: 3rem 5rem;
+    padding: 1rem 4rem;
+}
+
+#contact a {
+    text-decoration: none;
+    color: white;
+}
+
+#contact a:hover {
+    color: #FFA500;
+    border: solid #FFA500 1px;
+}
+
+#contact a:active {
+    color: #40E0D0;
+    border: solid #40E0D0 1px;
 }
 
