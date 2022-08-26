@@ -11,15 +11,17 @@
 </head>
 <body>
     <header>
-        <h1>Callum Novak</h1>
-        <h2>Front-End Developer</h2>
+        <div id="heading-container">
+            <h1>Callum Novak</h1>
+            <h2>Front-End Developer</h2>
+        </div>
         <nav>
             <ul>
                 <li>
                     <a href="#about-me">About Me</a>
                 </li>
                 <li>
-                    <a href="#">Projects</a>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li>
                     <a href="/contact.html">Contact</a>
@@ -31,23 +33,27 @@
         <section id="about-me">
             <h2>About Me</h2>
             <div id="about-me-container">
-                <p id="about-me-content">I'm Callum, a Brooklyn-based web developer. I worked for five years in defense as a weapons system engineer and analyst. During my time in defense, I realized that my favorite parts of the job were tool development and script writing, the work where I actually got to build stuff. So I've spent the last year learning web development, and I've loved every minute.</p>
-                <div id="pro-pic"></div>
+                <div id="about-me-content">
+                    <p>I'm Callum, a Brooklyn-based web developer. I worked for five years in defense as a weapons system engineer and analyst. During my time in defense, I realized that my favorite parts of the job were tool development and script writing, the work where I actually got to build stuff. So I've spent the last year learning web development, and I've loved every minute.</p>
+                    <a id="cv-link" href="resources/Resume_CallumNovak.pdf" target="_blank">My CV >>></a>
+                </div>
+                    <!-- <div id="pr-pic" title="Click to make cool." onclick="swapPhoto()"></div> -->
+                <img id="pro-pic" title="Click to make cool." src="resources/images/pro_pic.JPG" alt="Callum Novak" />
             </div>
         </section>
         <section id="projects">
             <h2>Projects</h2>
             <div id="projects-container">
                 <div class="project">
-                    <h3><a class="project-link" href="#">Incom Corporation Homepage</a></h3>
+                    <h3><a class="project-link" href="#">Incom Corporation Homepage >>></a></h3>
                     <p class="project-description">A homepage for the fictional for the fictional starship manufacturing company Incom Corporation.</p>
                 </div>
                 <div class="project">
-                    <h3><a class="project-link" href="#">Go Club Website</a></h3>
+                    <h3><a class="project-link" href="#">Go Club Website >>></a></h3>
                     <p class="project-description">A website for a hypothetical local club dedicated to the game of Go</p>
                 </div>
                 <div class="project">
-                    <h3><a class="project-link" href="#">Quote Maker</a></h3>
+                    <h3><a class="project-link" href="#">Quote Maker >>></a></h3>
                     <p class="project-description">A JavaScript app that randomly generates quotes and attributions, from pools of quotes, characters and movies.</p>
                 </div>
             </div>
@@ -60,6 +66,6 @@
             <p><strong>email: </strong>callum.j.novak@gmail.com</p>
         </section>
     </footer>
-    
+    <script src="resources/javascript/script.js" type="text/javascript"></script>
 </body>
 </html>

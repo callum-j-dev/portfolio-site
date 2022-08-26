@@ -1,6 +1,8 @@
 body {
     background-color: #000080;
     margin: 0px;
+    position: relative;
+    width: 100%;
 }
 
 h1 {
@@ -37,10 +39,13 @@ header {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 header nav {
-    align-self: baseline;
+    align-self: end;
+    justify-self: end;
 }
 
 header nav ul {
@@ -56,19 +61,19 @@ header nav li {
 
 header nav li a {
     text-decoration: none;
-    font-family: "koulen", sans-serif;
+    font-family: "Abel", sans-serif;
     color: white;
-    background-color: #000080;
-    border-radius: 20px;
     padding: 10px 20px;
 }
 
 header nav li a:hover {
-    background-color: #FFA500;
+    color: #FFA500;
+    border: solid #FFA500 1px;
 }
 
 header nav li a:active {
-    color: #40E0D0
+    color: #40E0D0;
+    border: solid #40E0D0 1px;
 }
 
 /* About Me Styles */
@@ -84,26 +89,44 @@ header nav li a:active {
 }
 
 #about-me-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+    display: grid;
     align-items: center;
+    justify-items: center;
+    margin: 3rem;
 }
 
-#about-me p {
+#about-me-content {
     padding: 20px;
     border: solid #FFA500 1px;
     height: fit-content;
     max-width: 45rem;
+    grid-column: blurb-start / blurb-end;
+}
+
+#cv-link {
+    text-decoration: none;
+    color: white;
+    font-family: "Abel", sans-serif;
+}
+
+#cv-link:hover {
+    color: #FFA500;
+    text-decoration: underline;
+}
+
+#cv-link:active {
+    color: #40E0D0;
+    text-decoration: underline;
 }
 
 #pro-pic {
-    background-image: url('../images/pro_pic.JPG');
     height: 300px;
     width: 300px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    object-fit: cover;
     border-radius: 50%;
+    flex-shrink: 0;
+    object-position: 0 20%;
+    grid-column: pic-start / pic-end;
 }
 
 /* Projects Styles */
@@ -113,20 +136,25 @@ header nav li a:active {
     margin-bottom: 5rem;
 }
 
+#projects h2 {
+    margin-bottom: 3rem;
+}
+
 #projects-container {
     list-style: none;
-    background-color: #FFA500;
+    /* background-color: #FFA500; */
     padding: 1rem 1rem;
     width: fit-content;
     display: grid;
     grid-template-rows: auto auto auto;
     row-gap: 1rem;
-    border-radius: 2px;
+    border: solid #FFA500 1px;
 }
 
 #projects-container .project {
-    border: solid white 1px;
+    /* border: solid white 1px; */
     padding: 1rem 2rem;
+    background-color: #FFA500;
     
 }
 
@@ -149,6 +177,12 @@ footer {
     background-color: #40E0D0BB;
     margin: 0px;
     padding: 20px;
+    text-align: left;
+    height: 150px;
+}
+
+#contact-info {
+    width: 95%;
     text-align: right;
 }
 
@@ -163,15 +197,60 @@ footer {
 #contact a {
     text-decoration: none;
     color: white;
+    font-family: "Abel", sans-serif;
 }
 
 #contact a:hover {
     color: #FFA500;
-    border: solid #FFA500 1px;
+    text-decoration: underline;
 }
 
 #contact a:active {
     color: #40E0D0;
-    border: solid #40E0D0 1px;
+    text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 720px) {
+    header {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    header nav {
+        justify-self: center;
+    }
+    
+    #about-me {
+        margin: 2rem auto;
+        text-align: center;
+    }
+    
+    #about-me-container {
+        grid-template-rows: [pic-start] auto [pic-end] 2rem [blurb-start] auto [blurb-end];
+        grid-template-columns: auto;
+    }
+
+    #pro-pic {
+        grid-row: pic-start / pic-end;
+    }
+
+    #about-me-content {
+        grid-row: blurb-start / blurb-end;
+    }
+
+    #projects {
+        margin: 2rem auto;
+        text-align: center;
+    }
+
+}
+
+/* Tablet+ Styles */
+@media only screen and (min-width: 721px) {
+    #about-me-container {
+        grid-template-columns: [blurb-start] auto [blurb-end] 5rem [pic-start] 300px [pic-end];
+    }
+
 }
 
